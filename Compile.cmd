@@ -4,11 +4,13 @@ if %errorLevel% == 0 (
   cd /d "%~dp0"
 )
 :q
+cls
 echo Compiling...
 glue.exe srlua.exe input.lua output.exe
-echo Finished. What do you want to do?
-echo 1) Compile again
-echo 2) Exit
+echo.
+echo Finished.
+echo Press 1 to refresh input.lua and compile again
+echo Press any other key to exit
 set /p opt=
 if %opt%==1 goto q
-if %opt%==2 exit
+exit
